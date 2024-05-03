@@ -4,109 +4,116 @@
 <head>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
   <meta charset="utf-8">
-  <meta name="description"
-    content="DFA Simulator by NARCOLUX" />
+  <meta name="description" content="DFA Simulator by NARCOLUX" />
   <meta name="author" content="NARCOLUX" />
 
   <title>Automaton Simulator</title>
   <link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.10.0.custom.min.css" />
   <link rel="stylesheet" type="text/css" href="css/fsm.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
-  <div id="tools">
-    <!-- <div style="text-align:center;">
-      <button id="saveBtn" onclick="fsm.save();" class="image" title="Save"><img src="images/empty.png" /></button>
-      <button id="loadBtn" onclick="fsm.load();" class="image" title="Load" style="margin-right: 20px;"><img
-          src="images/empty.png" /></button>
-      <button id="addStateBtn" onclick="fsm.addState();" class="image" title="Add State"><img
-          src="images/empty.png" /></button>
-    </div> -->
-    <label>Test / Debug:</label>
-    <input id="testString" type="text" value="" /><br />
-    <div style="text-align:center;">
-      <button id="testBtn" onclick="fsm.test($('#testString').val());" class="image" title="Test"><img
-          src="images/empty.png" /></button>
-      <button id="stopBtn" onclick="fsm.debugStop();" disabled="disabled" class="image" title="Stop Debug"><img
-          src="images/empty.png" /></button>
-      <button id="debugBtn" onclick="fsm.debug($('#testString').val());" class="image" title="Start/Step Debug"><img
-          src="images/empty.png" /></button>
-    </div>
-    <div id="testResult">&nbsp;</div>
-
-    <hr />
-    <h5>
-      Bulk Testing
-      <button id="bulkTestBtn" class="image" style="margin-left:15px;"
-        onclick="fsm.test({accept:$('#acceptStrings').val().split('\n'), reject:$('#rejectStrings').val().split('\n')});"
-        title="Run Bulk Tests"><img src="images/empty.png" /></button>
-    </h5>
-    <label>Accept (one per line):</label>
-    <textarea id="acceptStrings" style="margin-bottom:5px;"></textarea>
-    <br />
-    <label>Reject (one per line):</label>
-    <textarea id="rejectStrings"></textarea>
-  </div>
-
-  <div id="mainHolder">
-    <h1>
-      Automaton Simulator: DFA
-      <button class="delegate" title="Deterministic Finite Automaton">DFA</button>
-      <!-- <h1 class="delegate" title="Deterministic Finite Automaton">DFA</h1> -->
+<body class="">
+  <div class="main">
+    <div id="tools">
+      <!-- <div style="text-align:center;">
+        <button id="saveBtn" onclick="fsm.save();" class="image" title="Save"><img src="images/empty.png" /></button>
+        <button id="loadBtn" onclick="fsm.load();" class="image" title="Load" style="margin-right: 20px;"><img
+            src="images/empty.png" /></button>
+        <button id="addStateBtn" onclick="fsm.addState();" class="image" title="Add State"><img
+            src="images/empty.png" /></button>
+      </div> -->
+      <label class="ppp">Test/ Debug:</label>
+      <input class="input" id="testString" placeholder="Test string"><br />
+      <div class="btns">
+        <button id="testBtn" onclick="fsm.test($('#testString').val());" class="image" title="Test"><img
+            src="images/icons8-arrow-50 (2).png" alt=""></button>
+        <button id="stopBtn" onclick="fsm.debugStop();" disabled="disabled" class="image" title="Stop Debug"><img
+            src="images/icons8-stop-48.png" /></button>
+        <button id="debugBtn" onclick="fsm.debug($('#testString').val());" class="image" title="Start/Step Debug"><img
+            src="images/icons8-play-48.png" /></button>
+        <button id="resetBtn" onclick="fsm.reset();" class="image" title="Reset"><img src="images/icons8-reset-50.png" /></button>
 
 
-      <button id="resetBtn" onclick="fsm.reset();" class="image" title="Reset"><img src="images/empty.png" /></button>
-      <select id="examples">
-        <option value="">Examples</option>
-      </select>
-    </h1>
-    <div id="machineGraph">
-      <div id="dfaStatus" style="display:none;"></div>
-    </div>
-    <h5 id="bulkResultHeader" style="text-align:left;">
-      Test Results:
-      <span id="fsmDebugInputStatus" class="fsmStatus" style="display:none;">
-        <span class="consumedInput"></span>
-        <span class="currentInput"></span>
-        <span class="futureInput"></span>
-      </span>
-    </h5>
-    <div id="resultConsole"></div>
-  </div>
-
-  <!-- <div id="footer">
-    <div>
-      <a href="http://www.linkedin.com/in/kyledickerson/">Kyle Dickerson</a> --
-      kyle.dickerson@gmail.com
-      <a href="//plus.google.com/111960029093387822677?prsrc=3" rel="publisher" style="text-decoration:none;">
-        <img src="images/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;vertical-align:middle;" />
-      </a> --
-
-      <a href="https://github.com/kdickerson/automatonSimulator">On Github</a>&nbsp;&nbsp;
-      Tools:
-      <a href="http://jquery.com/">jQuery</a>&nbsp;&nbsp;
-      <a href="https://github.com/jsplumb/jsplumb">jsPlumb</a>&nbsp;&nbsp;
-      Icons:
-      <a href="http://www.fatcow.com/free-icons">FatCow</a>
-    </div>
-  </div> -->
-
-  <div id="saveLoadDialog">
-    <div id="saveLoadTabs">
-      <ul>
-        <li><a href="#browserStorage">Browser Storage</a></li>
-        <li><a href="#plaintext">Plaintext</a></li>
-        <li><a href="#shareableURL">Shareable URL</a></li>
-      </ul>
-      <div id="browserStorage">
-        <input id="machineName" type="text" value="Machine Name" title="Machine Name" />
-        <div>
-          <ul id="storedMachines"></ul>
-        </div>
       </div>
-      <div id="plaintext"><textarea></textarea></div>
-      <div id="shareableURL"><textarea></textarea></div>
+      <div id="testResult">&nbsp;</div>
+
+      <hr />
+      <h5 class="ppp bulk">
+        Bulk Testing
+        <button id="bulkTestBtn" class="image" style="margin-left:15px;"
+          onclick="fsm.test({accept:$('#acceptStrings').val().split('\n'), reject:$('#rejectStrings').val().split('\n')});"
+          title="Run Bulk Tests"><img src="images/icons8-fast-forward-50.png" /></button>
+      </h5>
+      <label class="ppp">Accept (one per line):</label>
+      <textarea id="acceptStrings" class="input" style="margin-bottom:5px;"></textarea>
+      <br />
+      <label class="ppp">Reject (one per line):</label>
+      <textarea id="rejectStrings" class="input"></textarea>
+    </div>
+
+    <div id="mainHolder">
+      <h1>
+        DFA Simulator
+        <button class="delegate" title="Deterministic Finite Automaton">DFA</button>
+        <!-- <h1 class="delegate" title="Deterministic Finite Automaton">DFA</h1> -->
+
+
+        <select id="examples">
+          <option value="">Examples</option>
+        </select>
+      </h1>
+      <div id="machineGraph">
+        <div id="dfaStatus" style="display:none;"></div>
+      </div>
+      <h5 id="bulkResultHeader" style="text-align:left;">
+        Test Results:
+        <span id="fsmDebugInputStatus" class="fsmStatus" style="display:none;">
+          <span class="consumedInput"></span>
+          <span class="currentInput"></span>
+          <span class="futureInput"></span>
+        </span>
+      </h5>
+      <div id="resultConsole"></div>
+    </div>
+
+    <!-- <div id="footer">
+      <div>
+        <a href="http://www.linkedin.com/in/kyledickerson/">Kyle Dickerson</a> --
+        kyle.dickerson@gmail.com
+        <a href="//plus.google.com/111960029093387822677?prsrc=3" rel="publisher" style="text-decoration:none;">
+          <img src="images/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;vertical-align:middle;" />
+        </a> --
+  
+        <a href="https://github.com/kdickerson/automatonSimulator">On Github</a>&nbsp;&nbsp;
+        Tools:
+        <a href="http://jquery.com/">jQuery</a>&nbsp;&nbsp;
+        <a href="https://github.com/jsplumb/jsplumb">jsPlumb</a>&nbsp;&nbsp;
+        Icons:
+        <a href="http://www.fatcow.com/free-icons">FatCow</a>
+      </div>
+    </div> -->
+
+    <div id="saveLoadDialog">
+      <div id="saveLoadTabs">
+        <ul>
+          <li><a href="#browserStorage">Browser Storage</a></li>
+          <li><a href="#plaintext">Plaintext</a></li>
+          <li><a href="#shareableURL">Shareable URL</a></li>
+        </ul>
+        <div id="browserStorage">
+          <input id="machineName" type="text" value="Machine Name" title="Machine Name" />
+          <div>
+            <ul id="storedMachines"></ul>
+          </div>
+        </div>
+        <div id="plaintext"><textarea></textarea></div>
+        <div id="shareableURL"><textarea></textarea></div>
+      </div>
     </div>
   </div>
 
