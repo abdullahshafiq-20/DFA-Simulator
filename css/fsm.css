@@ -622,3 +622,16 @@ img.delete:hover {
 #resetBtn:disabled img {
   background-position: 0 -330px;
 }
+
+@media screen and (max-width: 1000px) {
+  .main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: none!important; */
+    border: 1px solid red;
+    background: none;
+  }
+  
+}
