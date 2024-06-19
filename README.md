@@ -1,14 +1,44 @@
-# automatonSimulator
-A website that simulates various finite state machines: Deterministic Finite Automata (DFA), Nondeterministic Finite Automata (NFA), Pushdown Automata (PDA).
+# DFA Simulator 🤖
 
-A GUI is provided to create, save/load (browser local storage), export/import (plaintext format), and debug finite state machines.
+Welcome to the DFA Simulator! This interactive web application allows you to simulate and visualize Deterministic Finite Automata (DFA) in a user-friendly environment. 🎯
 
-A large set of test strings can be designated to be accepted or rejected and then all tested at once.
+<img src="dfa-simulator-image.png" alt="DFA Simulator" style="border-radius: 10px;">
 
-Or, a specific string can be step-debugged to see exactly how the finite state machine would handle it.
+## Live Demo 🌐
 
-You can embed a machine description in a URL hash and the page will load it for you.  This allows you to provide a link that will load a specific machine.  For example: `http://[site-domain]/#[paste machine description here]`
+Explore the DFA Simulator in action: [https://dfa-simulator-ashy.vercel.app/](https://dfa-simulator-ashy.vercel.app/)
 
-A real-world example: [Click to load an example machine](http://automatonsimulator.com/#{%22type%22:%22DFA%22,%22dfa%22:{%22transitions%22:{%22start%22:{%22A%22:%22s0%22},%22s0%22:{%22B%22:%22s1%22},%22s1%22:{%22A%22:%22s2%22},%22s2%22:{%22B%22:%22s1%22}},%22startState%22:%22start%22,%22acceptStates%22:[%22s1%22]},%22states%22:{%22start%22:{},%22s0%22:{%22top%22:100,%22left%22:208},%22s1%22:{%22isAccept%22:true,%22top%22:210,%22left%22:231},%22s2%22:{%22top%22:286,%22left%22:70}},%22transitions%22:[{%22stateA%22:%22start%22,%22label%22:%22A%22,%22stateB%22:%22s0%22},{%22stateA%22:%22s0%22,%22label%22:%22B%22,%22stateB%22:%22s1%22},{%22stateA%22:%22s1%22,%22label%22:%22A%22,%22stateB%22:%22s2%22},{%22stateA%22:%22s2%22,%22label%22:%22B%22,%22stateB%22:%22s1%22}],%22bulkTests%22:{%22accept%22:%22AB\nABAB\nABABAB%22,%22reject%22:%22\nA\nB\nABA\nBA\nBB\nABABB%22}})
+## Features ✨
 
-MIT Licensed, see License.txt
+- **Canvas Visualization**: The application features a central canvas area where you can create and manipulate DFA states through intuitive interactions. 🖼️
+- **State Creation**: Double-click on the canvas to create new states for your DFA. 🆕
+- **Transition Definition**: Connect states by drawing transitions between them and define the corresponding input values. ➡️
+- **String Testing**: Test your DFA by providing input strings to see their acceptance or rejection. 🔍
+- **Manual Debugging**: Step through the DFA manually, exploring state transitions with specific inputs for a deeper understanding. 🐞
+- **Example DFAs**: Access pre-defined examples to learn and experiment with different DFA configurations. 📚
+- **Intuitive Interface**: The user-friendly interface makes it easy to navigate and interact with the DFA Simulator. 🖥️
+
+## Getting Started 🚀
+
+To run the DFA Simulator locally, follow these steps:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/dfa-simulator.git
+    ```
+2. Open the `index.html` file in your preferred web browser.
+3. Start creating and simulating your DFAs! 🎉
+
+## Technologies Used 🛠️
+
+- **HTML5** 📄
+- **CSS3** 🎨
+- **JavaScript** 🔗
+
+## Contributing 🤝
+
+Contributions to the DFA Simulator project are welcome! If you have any ideas, bug fixes, or improvements, feel free to open an issue or submit a pull request.
+
+## License 📄
+
+This project is licensed under the MIT License.
