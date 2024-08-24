@@ -2,7 +2,7 @@
 
 Welcome to the DFA Simulator! This interactive web application allows you to simulate and visualize Deterministic Finite Automata (DFA) in a user-friendly environment. 🎯
 
-<img src="dfa-simulator-image.png" alt="DFA Simulator" style="border-radius: 10px;">
+<img src="images/bg.png" alt="DFA Simulator" style="border-radius: 10px;">
 
 ## Live Demo 🌐
 
